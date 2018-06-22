@@ -1,5 +1,5 @@
 <template>
-    <header>
+    <header class="box-shadow">
         <section class="container">
             <div class="row">
                 <div class="col-md-4">
@@ -24,7 +24,6 @@
         left: 0;
         right: 0;
         z-index: 3000;
-        box-shadow: 0 0 10px rgba(0,0,0,.15), 0 3px 3px rgba(0,0,0,.15);
     }
 
     #dom-logo {
