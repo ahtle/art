@@ -2,7 +2,11 @@
 
     <section id="art-screen">
         <div class="slide-panel" :class="slidePanelClass" id="panel-1" @click="expandPanel(0)">
-            <div class="panel-frame float-left"></div>
+            <transition name="fade">
+                <div v-if="showSlideCoverOne" class="slide-cover"></div>
+            </transition>
+
+            <div class="panel-frame float-left" :class="panelFrameClass"></div>
 
             <transition name="fade">
                 <div class="pre-expand" v-if="showPreExpand">
@@ -18,15 +22,19 @@
                         magna aliqua.</p>
                     </div>
 
-                    <a class="arrow-down" href="#finance"></a>
+                    <a class="arrow-down" v-on:click="emitNavigateTo('finance')"></a>
                 </div>
             </transition>
 
-            <div class="panel-frame float-right"></div>
+            <div class="panel-frame float-right" :class="panelFrameClass"></div>
         </div>
 
         <div class="slide-panel" :class="slidePanelClass" id="panel-2" @click="expandPanel(1)">
-            <div class="panel-frame float-left"></div>
+            <transition name="fade">
+                <div v-if="showSlideCoverTwo" class="slide-cover"></div>
+            </transition>
+
+            <div class="panel-frame float-left" :class="panelFrameClass"></div>
 
             <transition name="fade">
                 <div class="pre-expand" v-if="showPreExpand">
@@ -42,15 +50,19 @@
                             magna aliqua.</p>
                     </div>
 
-                    <a class="arrow-down" href="#hr"></a>
+                    <a class="arrow-down" v-on:click="emitNavigateTo('hr')"></a>
                 </div>
             </transition>
 
-            <div class="panel-frame pull-right"></div>
+            <div class="panel-frame float-right" :class="panelFrameClass"></div>
         </div>
 
         <div class="slide-panel" :class="slidePanelClass" id="panel-3" @click="expandPanel(2)">
-            <div class="panel-frame float-left"></div>
+            <transition name="fade">
+                <div v-if="showSlideCoverThree" class="slide-cover"></div>
+            </transition>
+
+            <div class="panel-frame float-left" :class="panelFrameClass"></div>
 
             <transition name="fade">
                 <div class="pre-expand" v-if="showPreExpand">
@@ -70,15 +82,19 @@
                         magna aliqua.</p>
                     </div>
 
-                    <a class="arrow-down" href="#faculty"></a>
+                    <a class="arrow-down" v-on:click="emitNavigateTo('faculty')"></a>
                 </div>
             </transition>
 
-            <div class="panel-frame pull-right"></div>
+            <div class="panel-frame float-right" :class="panelFrameClass"></div>
         </div>
 
         <div class="slide-panel" :class="slidePanelClass" id="panel-4" @click="expandPanel(3)">
-            <div class="panel-frame float-left"></div>
+            <transition name="fade">
+                <div v-if="showSlideCoverFour" class="slide-cover"></div>
+            </transition>
+
+            <div class="panel-frame float-left" :class="panelFrameClass"></div>
 
             <transition name="fade">
                 <div class="pre-expand" v-if="showPreExpand">
@@ -98,15 +114,19 @@
                         magna aliqua.</p>
                     </div>
 
-                    <a class="arrow-down" href="#operations"></a>
+                    <a class="arrow-down" v-on:click="emitNavigateTo('operations')"></a>
                 </div>
             </transition>
 
-            <div class="panel-frame pull-right"></div>
+            <div class="panel-frame float-right" :class="panelFrameClass"></div>
         </div>
 
         <div class="slide-panel" :class="slidePanelClass" id="panel-5" @click="expandPanel(4)">
-            <div class="panel-frame float-left"></div>
+            <transition name="fade">
+                <div v-if="showSlideCoverFive" class="slide-cover"></div>
+            </transition>
+
+            <div class="panel-frame float-left" :class="panelFrameClass"></div>
 
             <transition name="fade">
                 <div class="pre-expand" v-if="showPreExpand">
@@ -126,15 +146,19 @@
                         magna aliqua.</p>
                     </div>
 
-                    <a class="arrow-down" href="#communications"></a>
+                    <a class="arrow-down" v-on:click="emitNavigateTo('communications')"></a>
                 </div>
             </transition>
 
-            <div class="panel-frame pull-right"></div>
+            <div class="panel-frame float-right" :class="panelFrameClass"></div>
         </div>
 
         <div class="slide-panel" :class="slidePanelClass" id="panel-6" @click="expandPanel(5)">
-            <div class="panel-frame float-left"></div>
+            <transition name="fade">
+                <div v-if="showSlideCoverSix" class="slide-cover"></div>
+            </transition>
+
+            <div class="panel-frame float-left" :class="panelFrameClass"></div>
 
             <transition name="fade">
                 <div class="pre-expand" v-if="showPreExpand">
@@ -150,15 +174,19 @@
                         magna aliqua.</p>
                     </div>
 
-                    <a class="arrow-down" href="#research"></a>
+                    <a class="arrow-down" v-on:click="emitNavigateTo('research')"></a>
                 </div>
             </transition>
 
-            <div class="panel-frame pull-right"></div>
+            <div class="panel-frame float-right" :class="panelFrameClass"></div>
         </div>
 
         <div class="slide-panel" :class="slidePanelClass" id="panel-7" @click="expandPanel(6)">
-            <div class="panel-frame float-left"></div>
+            <transition name="fade">
+                <div v-if="showSlideCoverSeven" class="slide-cover"></div>
+            </transition>
+
+            <div class="panel-frame float-left" :class="panelFrameClass"></div>
 
             <transition name="fade">
                 <div class="pre-expand" v-if="showPreExpand">
@@ -174,11 +202,11 @@
                         magna aliqua.</p>
                     </div>
             
-                    <a class="arrow-down" href="#clinical"></a>
+                    <a class="arrow-down" v-on:click="emitNavigateTo('clinical')"></a>
                 </div>
             </transition>
 
-            <div class="panel-frame pull-right"></div>
+            <div class="panel-frame float-right" :class="panelFrameClass"></div>
         </div>
 
         <transition name="fade">
@@ -201,29 +229,33 @@
         display: flex;
         background: url('~assets/images/lake.jpg') no-repeat scroll;
         background-size: cover;
+        background-position: center center;
     }
     .slide-panel {
-        display: inline-block;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
         height: 100%;
         -webkit-box-flex: 1;
             -ms-flex: 1;
                 flex: 1;
-        /* float: left; */
-        /* margin-left: 4px;
-        margin-right: 4px; */
-        opacity: 0;
-        -webkit-transition: all 0.5s linear;
-        transition: all 0.5s linear;
-        /* background: url('~assets/images/lake.jpg') no-repeat scroll;
-        background-size: cover; */
+    }
+    .slide-cover {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #f9f6ef;
+        z-index: 2000;
     }
     .panel-frame {
         background-color: #f9f6ef;
         height: 100%;
         width: 4px;
+        transition: all 0.5s linear;
     }
     .pre-expand{
         height: 100%;
+        width: 100%;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -247,6 +279,7 @@
         font-weight: bold;
     }
     .pre-expand .site-title {
+        z-index: 1000;
         position: absolute;
         top: 40px;
     }
@@ -259,60 +292,6 @@
         text-align: center;
         font-size: 20pt;
         color: #b1040e;
-    }
-    .top-blank, .bottom-blank {
-        background-color: rgb(41, 46, 48);
-        width: 100%;
-        position: absolute;
-    }
-    .top-blank {
-        top: 0;
-        -webkit-transition: all 0.5s ease;
-        transition: all 0.5s ease;
-    }
-    .bottom-blank {
-        bottom: 0;
-        -webkit-transition: all 0.5s ease;
-        transition: all 0.5s ease;
-    }
-    #panel-1 {
-        background-position-x: 0vw;
-    }
-    #panel-1 .pre-expand .top-blank, #panel-1 .pre-expand .bottom-blank {
-        height: 150px;
-    }
-    #panel-2 {
-        background-position-x: -14.28571vw;
-    }
-    #panel-2 .pre-expand .top-blank, #panel-2 .pre-expand .bottom-blank {
-        height: 100px;
-    }
-    #panel-3 {
-        background-position-x: -28.57143vw;
-    }
-    #panel-3 .pre-expand .top-blank, #panel-3 .pre-expand .bottom-blank {
-        height: 50px;
-    }
-    #panel-4 {
-        background-position-x: -42.85714vw;
-    }
-    #panel-5 {
-        background-position-x: -57.14286vw;
-    }
-    #panel-5 .pre-expand .bottom-blank, #panel-5 .pre-expand .top-blank {
-        height: 50px;
-    }
-    #panel-6 {
-        background-position-x: -71.42857vw;
-    }
-    #panel-6 .pre-expand .bottom-blank, #panel-6 .pre-expand .top-blank {
-        height: 100px;
-    }
-    #panel-7 {
-        background-position-x: -85.71429vw;
-    }
-    #panel-7 .pre-expand .bottom-blank, #panel-7 .pre-expand .top-blank {
-        height: 150px;
     }
     .post-expand {
         height: 100%;
@@ -399,6 +378,14 @@
         data () {
             return {
                 slidePanelClass: '',
+                showSlideCoverOne: true,
+                showSlideCoverTwo: true,
+                showSlideCoverThree: true,
+                showSlideCoverFour: true,
+                showSlideCoverFive: true,
+                showSlideCoverSix: true,
+                showSlideCoverSeven: true,
+                panelFrameClass: '',
                 showXButton: false,
                 showPreExpand: true,
                 showPostExpand: [false, false, false, false, false, false, false],
@@ -406,23 +393,37 @@
             }
         },
         methods: {
+            emitNavigateTo(value) {
+                this.$emit('navigate', value);
+            },
+
             initialAnimation() {
                 setTimeout(() => {
-                    $('#panel-1, #panel-7').addClass('opacity');
-                }, 300);
+                    this.showSlideCoverOne = false;
+                }, 200);
                 setTimeout(() => {
-                    $('#panel-2, #panel-6').addClass('opacity');
+                    this.showSlideCoverSeven = false;
+                }, 400);
+                setTimeout(() => {
+                    this.showSlideCoverTwo = false;
                 }, 600);
                 setTimeout(() => {
-                    $('#panel-3, #panel-5').addClass('opacity');
-                }, 900);
+                    this.showSlideCoverSix= false;
+                }, 800);
                 setTimeout(() => {
-                    $('#panel-4').addClass('opacity');
+                    this.showSlideCoverThree = false;
+                }, 1000);
+                setTimeout(() => {
+                    this.showSlideCoverFive = false;
                 }, 1200);
+                setTimeout(() => {
+                    this.showSlideCoverFour = false;
+                }, 1400);
             },
 
             expandPanel(index) {
-                this.slidePanelClass = 'opacity no-margin';
+                this.panelFrameClass = 'no-width';
+                this.slidePanelClass = 'position-initial';
                 this.showXButton = true;
                 this.showPreExpand = false;
                 this.showPostExpand[index] = true;
@@ -430,12 +431,14 @@
 
             initialPanel() {
                 this.showXButton = false;
+                this.panelFrameClass = '';
                 this.showPostExpand = [false, false, false, false, false, false, false];
+                this.showPreExpand = true;
+                this.slidePanelClass = 'position-initial no-pointer-events';
 
                 setTimeout(() => {
-                    this.slidePanelClass = 'opacity';
-                    this.showPreExpand = true;
-                }, 300);
+                    this.slidePanelClass = '';
+                }, 1000);
             }
         },
         mounted () {

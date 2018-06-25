@@ -4,25 +4,25 @@
             <nav class="navbar">
                 <ul class="nav navbar-nav">
                     <li class="nav-item">
-                    <a class="nav-link" href="#finance">Finance</a>
+                        <a class="nav-link" v-on:click="emitNavigateTo('finance')">Finance</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#hr">Human Resources</a>
+                        <a class="nav-link" v-on:click="emitNavigateTo('hr')">Human Resources</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#faculty">Faculty Affairs</a>
+                        <a class="nav-link" v-on:click="emitNavigateTo('faculty')">Faculty Affairs</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#operations">Operations</a>
+                        <a class="nav-link" v-on:click="emitNavigateTo('operations')">Operations</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#communications">Communications</a>
+                        <a class="nav-link" v-on:click="emitNavigateTo('communications')">Communications</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#research">Research</a>
+                        <a class="nav-link" v-on:click="emitNavigateTo('research')">Research</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#clinical">Clinical</a>
+                        <a class="nav-link" v-on:click="emitNavigateTo('clinical')">Clinical</a>
                     </li>
                 </ul>
             </nav>
@@ -53,18 +53,24 @@
     .navbar ul li {
         text-align: center;
         margin: 0 20px;
+        color: #fff;
     }
 
     .navbar ul li a {
         font-size: 18px;
         color: #fff;
         font-weight: bold;
+        cursor: pointer;
     }
 </style>
 
 
 <script>
     export default {
-
+        methods: {
+            emitNavigateTo(value) {
+                this.$emit('navigate', value);
+            },
+        }
     }
 </script>

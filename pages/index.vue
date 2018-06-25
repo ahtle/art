@@ -4,11 +4,11 @@
 
       <transition name="fade">
         <div v-if="showNavigation">
-          <navigation/>
+          <navigation @navigate="scrollToSection"/>
         </div>
       </transition>
 
-      <art-screen/>
+      <art-screen @navigate="scrollToSection"/>
 
       <main :class="mainClass">
         <finance-section />
@@ -45,9 +45,21 @@ export default {
     }
   },
 
+
   methods: {
+    scrollToSection(value) {
+      this.mainClass = '';
+      console.log(value);
+
+      let elmnt = document.getElementById(value);
+
+      setTimeout(() => {
+        elmnt.scrollIntoView({block: 'start', behavior: 'smooth'});
+      }, 200);
+    },
+
     handleScroll() {
-      if (window.scrollY > 1080) {
+      if (window.scrollY > 1020) {
         this.mainClass = ''
         this.showNavigation = true;
       } else {
