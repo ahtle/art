@@ -14,6 +14,8 @@
         <finance-section />
         <human-resource-section />
         <faculty-affairs-section />
+        <operations-section />
+        <research-section />
       </main>
 
       <div id="main-spacer"></div>
@@ -29,6 +31,8 @@ import Navigation from '~/components/home/Navigation.vue';
 import FinanceSection from '~/components/home/FinanceSection.vue';
 import HumanResourceSection from '~/components/home/HumanResourceSection.vue';
 import FacultyAffairsSection from '~/components/home/FacultyAffairsSection.vue'
+import OperationsSection from '~/components/home/OperationsSection.vue'
+import ResearchSection from '~/components/home/ResearchSection.vue'
 
 
 export default {
@@ -39,6 +43,8 @@ export default {
     FinanceSection,
     HumanResourceSection,
     FacultyAffairsSection,
+    OperationsSection,
+    ResearchSection
   },
 
   data() {
