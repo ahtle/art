@@ -22,6 +22,7 @@ img {
 
 
 .section-header {
+    text-transform: uppercase;
     font-size: 3em;
 }
 
@@ -63,6 +64,10 @@ img {
 
 .no-pointer-events {
     pointer-events: none; 
+}
+
+.z-index-0 {
+    z-index: 0;
 }
 
 /* vue animation */

@@ -13,6 +13,7 @@
       <main :class="mainClass">
         <finance-section />
         <human-resource-section />
+        <faculty-affairs-section />
       </main>
 
       <div id="main-spacer"></div>
@@ -27,6 +28,7 @@ import ArtScreen from '~/components/home/ArtScreen.vue';
 import Navigation from '~/components/home/Navigation.vue';
 import FinanceSection from '~/components/home/FinanceSection.vue';
 import HumanResourceSection from '~/components/home/HumanResourceSection.vue';
+import FacultyAffairsSection from '~/components/home/FacultyAffairsSection.vue'
 
 
 export default {
@@ -36,6 +38,7 @@ export default {
     ArtScreen,
     FinanceSection,
     HumanResourceSection,
+    FacultyAffairsSection,
   },
 
   data() {
@@ -49,12 +52,17 @@ export default {
   methods: {
     scrollToSection(value) {
       this.mainClass = '';
-      console.log(value);
 
-      let elmnt = document.getElementById(value);
+      const element = document.getElementById(value);
+      const offset = 40;
 
       setTimeout(() => {
-        elmnt.scrollIntoView({block: 'start', behavior: 'smooth'});
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = element.getBoundingClientRect().top;
+        const elementPosition = elementRect - bodyRect;
+        const offsetPosition = elementPosition - offset;
+
+        window.scrollTo({ top: offsetPosition,behavior: "smooth" });
       }, 200);
     },
 
