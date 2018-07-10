@@ -16,7 +16,7 @@
     </header>
 </template>
 
-<style>
+<style scoped>
     header {
         background-color: #fff;
         position: fixed;

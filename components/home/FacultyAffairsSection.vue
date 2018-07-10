@@ -7,17 +7,19 @@
                 <div class="subsection-title">
                     <div>
                         <h4><strong>01</strong> / 03</h4>
-                        <h2>REVIEW</h2>
+                        <h2 style="color: #cacaca;">REVIEW</h2>
                     </div>
                 </div>
 
                 <div class="app-box">
                     <h4 class="app-title">domfacultyreview</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>Annual faculty evaluation and counseling process improvement. Tracking and monitoring of process status. 
+                        Automated triggers and reminders to allow managers stay on top to achieve improved completion rate. 
+                        Automated filling of faculty information to alleviate data entry burden on faculty.</p>
                 </div>
 
                 <div class="app-img-container box-shadow">
-                    <img src="~assets/images/domleanhr.png"/>
+                    <img src="~assets/images/domfacultyreview.png"/>
                 </div>
 
                 <div class="next-button box-shadow" v-on:click="selectSection = 2"></div>
@@ -34,12 +36,12 @@
                 </div>
 
                 <div class="app-box" style="border-color: #fff;">
-                    <h4 class="app-title" style="color:#fff;">faculty application</h4>
-                    <p style="color: #fff;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <h4 class="app-title" style="color:#fff;">facultyapplication</h4>
+                    <p style="color: #fff;">Allow candidates from around the world to apply for faculty positions through a portal.</p>
                 </div>
 
                 <div class="app-img-container box-shadow">
-                    <img src="~assets/images/domleanhr.png"/>
+                    <img src="~assets/images/facultyapplication.png"/>
                 </div>
 
                 <div class="next-button box-shadow" v-on:click="selectSection = 3"></div>
@@ -56,12 +58,13 @@
                 </div>
 
                 <div class="app-box" style="border-color: #fff;">
-                    <h4 class="app-title" style="color:#fff;">candidate interview</h4>
-                    <p style="color: #fff;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <h4 class="app-title" style="color:#fff;">facultyinterview</h4>
+                    <p style="color: #fff;">Allow faculty affairs office to manage and monitor faculty candicate interview process. 
+                        Workflow to generate interview notifications to faculty, to send out surveys to collect interview feedback, to summerize candidacy ranking.</p>
                 </div>
 
                 <div class="app-img-container box-shadow">
-                    <img src="~assets/images/domleanhr.png"/>
+                    <img src="~assets/images/facultyinterview.png"/>
                 </div>
 
                 <div class="next-button box-shadow" v-on:click="selectSection = 1"></div>
@@ -84,7 +87,7 @@
 .fa-container {
     position: relative;
     width: 100%;
-    height: 80vh;
+    height: 70vh;
     left: 0px;
     transition: all 0.5s linear;
 }
@@ -116,21 +119,21 @@
 }
 
 .subsection-title h2 {
-    font-size: 250px;
+    font-size: 200px;
     text-transform: uppercase;
 }
 
 .app-box {
     position: absolute;
     top: 100px;
-    right: 15%;
+    right: 10%;
     width: 250px;
     padding-left: 30px;
     border-left: 2px solid #8c1515;
 }
 
 .app-img-container {
-    width: 600px;
+    width: 40%;
     bottom: 60px;
     position: absolute;
     right: 30%;

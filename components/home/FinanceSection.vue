@@ -10,8 +10,8 @@
                 
                 <div class="app-detail">
                     <h2 class="app-title">domcomp</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                    magna aliqua.</p>
+                    <p>Faculty compensation reporting, clinical incentive and bonus calculation. Workflow from compensation reporting to OTP generation. 
+                        Division roll up for analytic insights. Faculty direct and secure access to their own reports for transparency and communications.</p>
                 </div>
             </div>
         
@@ -20,8 +20,8 @@
                 
                 <div class="app-detail">
                     <h2 class="app-title">domcommitments</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                    magna aliqua.</p>
+                    <p>Faculty commitment requesting, tracking, management, and reporting system. Workflow for new commitment request with progressive 
+                        roles of authority for documenting and approving. Commitment tracking and reporting through visualization, and drill down by any defined criteria.</p>
                 </div>
             </div>
         
@@ -38,7 +38,7 @@
     </section>
 </template>
 
-<style>
+<style scoped>
 #finance {
     padding-left: 30px; 
     padding-right: 30px;

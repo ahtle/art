@@ -1,5 +1,4 @@
 <template>
-
     <section id="art-screen">
         <div class="slide-panel" :class="slidePanelClass" id="panel-1" @click="expandPanel(0)">
             <transition name="fade">
@@ -270,7 +269,7 @@
     }
     .pre-expand p {
         color: #fff;
-        font-size: 1.4em;
+        font-size: 2em;
         text-align: center;
     }
     .pre-expand p span {
@@ -309,7 +308,7 @@
     }
     .post-expand .text-container {
         position: absolute;
-        top: 30%;
+        top: 35%;
         left: 30px;
         right: 30px;
         display: -webkit-box;

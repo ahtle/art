@@ -15,10 +15,14 @@
         <human-resource-section />
         <faculty-affairs-section />
         <operations-section />
+        <communications-section />
         <research-section />
+        <clinical-section />
       </main>
 
       <div id="main-spacer" v-if="mainSpacerClass"></div>
+
+      <global-footer />
 
   </section>
 </template>
@@ -30,9 +34,12 @@ import ArtScreen from '~/components/home/ArtScreen.vue';
 import Navigation from '~/components/home/Navigation.vue';
 import FinanceSection from '~/components/home/FinanceSection.vue';
 import HumanResourceSection from '~/components/home/HumanResourceSection.vue';
-import FacultyAffairsSection from '~/components/home/FacultyAffairsSection.vue'
-import OperationsSection from '~/components/home/OperationsSection.vue'
-import ResearchSection from '~/components/home/ResearchSection.vue'
+import FacultyAffairsSection from '~/components/home/FacultyAffairsSection.vue';
+import OperationsSection from '~/components/home/OperationsSection.vue';
+import CommunicationsSection from '~/components/home/CommunicationsSection.vue';
+import ResearchSection from '~/components/home/ResearchSection.vue';
+import ClinicalSection from '~/components/home/ClinicalSection.vue';
+import GlobalFooter from '~/components/GlobalFooter.vue';
 
 
 export default {
@@ -44,7 +51,10 @@ export default {
     HumanResourceSection,
     FacultyAffairsSection,
     OperationsSection,
-    ResearchSection
+    CommunicationsSection,
+    ResearchSection,
+    ClinicalSection,
+    GlobalFooter
   },
 
   data() {

@@ -8,8 +8,9 @@
                 <div class="app-card">
                     <div class="app-detail">
                     <h2 class="app-title">domleanhr</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua.</p>
+                    <p>Staff position posting process improvement. Automated position retrieval for position refill. 
+                        Workflow from hiring managers to HR managers to cut back and forth emails, to shorten time gap between 
+                        information gathering and position posting. To automate JIF generation.</p>
                     </div>
                     
                     <img src="~assets/images/domleanhr.png"/>

@@ -1,11 +1,8 @@
 <template>
     <section id="research" name="research" class="panel" style="padding: 0;">
-        <!-- <div class="background-container">
-            <div class="background" :class="blurClass"></div>
-        </div> -->
 
         <div class="imageContainer">
-            <img src="~assets/images/campus-big-01.jpg" :class="blurClass">
+            <div class="bg-img" :class="blurClass"></div>
         </div>
 
         <h1 class="section-header text-center" :class="focusedClass" style="margin-bottom: 60px; color: #fff;">Research</h1>
@@ -14,11 +11,11 @@
             <div class="app-card box-shadow" :class="focusedClass">
                 <div class="app-detail">
                 <h2 class="app-title">t32 grant</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                    magna aliqua.</p>
+                <p>Data collection and warehousing of insitutional databases to extract and parse T32 relevant information. 
+                    Automated feeding to web interface for curation and accuracy checking. Automated generation of Word tables that directy feed to final T32 grant submission.</p>
                 </div>
                 
-                <img src="~assets/images/domleanhr.png"/>
+                <img src="~assets/images/t32grant.png"/>
             </div>
         </div>
     </section>
@@ -33,7 +30,9 @@
     overflow: hidden;
 }
 
-.imageContainer img {
+.bg-img {
+    background-image: url('~assets/images/campus-big-01.jpg');
+    background-position: center;
     height: 750px;
     transform: scale(1.1);
 }
@@ -44,7 +43,7 @@
 }
 
 .app-card {
-    width: 40%;
+    width: 35%;
 }
 
 .section-header, .app-card {
@@ -115,7 +114,6 @@ export default {
 
         // element's scroll height
         const elePositionY = $('#research').offset().top;
-        console.log(elePositionY);
 
         this.focusMinY = elePositionY + 350;
         this.focusMaxY = elePositionY + 1400;
