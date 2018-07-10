@@ -18,7 +18,7 @@
         <research-section />
       </main>
 
-      <div id="main-spacer"></div>
+      <div id="main-spacer" v-if="mainSpacerClass"></div>
 
   </section>
 </template>
@@ -51,6 +51,7 @@ export default {
     return {
       mainClass: 'affix',
       showNavigation: false,
+      mainSpacerClass: true,
     }
   },
 
@@ -76,9 +77,11 @@ export default {
       if (window.scrollY > 1020) {
         this.mainClass = ''
         this.showNavigation = true;
+        this.mainSpacerClass = false;
       } else {
         this.mainClass = 'affix'
         this.showNavigation = false;
+        this.mainSpacerClass = true;
       }
     }
   },

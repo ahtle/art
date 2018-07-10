@@ -76,7 +76,7 @@
 .section-header {
     color: orange;
     position: absolute;
-    top: 30px;
+    top: 90px;
     left: 30px;
     z-index: 2000;
 }

@@ -1,6 +1,12 @@
 <template>
-    <section id="research" name="research" class="panel">
-        <div class="background" :class="blurClass"></div>
+    <section id="research" name="research" class="panel" style="padding: 0;">
+        <!-- <div class="background-container">
+            <div class="background" :class="blurClass"></div>
+        </div> -->
+
+        <div class="imageContainer">
+            <img src="~assets/images/campus-big-01.jpg" :class="blurClass">
+        </div>
 
         <h1 class="section-header text-center" :class="focusedClass" style="margin-bottom: 60px; color: #fff;">Research</h1>
 
@@ -23,15 +29,13 @@
     position: relative;
 }
 
-.background {
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    background-image: url('~assets/images/campus-big-01.jpg');
-    background-size: cover;
+.imageContainer {
+    overflow: hidden;
+}
+
+.imageContainer img {
+    height: 750px;
+    transform: scale(1.1);
 }
 
 .center {
@@ -46,6 +50,16 @@
 .section-header, .app-card {
     opacity: 0;
     transition: opacity 0.5s ease;
+    position: absolute;
+}
+
+.section-header {
+    top: 90px;
+    width: 100%;
+}
+
+.app-card {
+    bottom: 60px;
 }
 
 .opacity {
@@ -54,6 +68,7 @@
 
 .blur {
     filter: blur(8px);
+    transform: scale(1.1);
 }
 
 </style>
