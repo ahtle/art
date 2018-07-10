@@ -37,6 +37,8 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
+        border-radius: 10px;
+        overflow: hidden;
     }
 
     #domquality {

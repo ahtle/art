@@ -137,6 +137,12 @@
     bottom: 60px;
     position: absolute;
     right: 30%;
+    border-radius: 10px;
+    background: transparent;
+}
+
+.app-img-container img {
+    border-radius: 10px;
 }
 
 .next-button {

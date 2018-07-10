@@ -26,6 +26,11 @@ img {
     font-size: 3em;
 }
 
+.app-card {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
 .app-detail {
     padding: 20px;
 }
