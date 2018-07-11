@@ -59,12 +59,22 @@ export default {
 
   data() {
     return {
+      title: 'ART - Launchpad',
+      metaDescription: "Stanford Department of Medicine's launchpad for web applications",
       mainClass: 'affix',
       showNavigation: false,
       mainSpacerClass: true,
     }
   },
 
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        { hid: 'description', name: 'description', content: this.metaDescription }
+      ]
+    }
+  },
 
   methods: {
     scrollToSection(value) {

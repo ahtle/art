@@ -115,7 +115,7 @@ export default {
         // element's scroll height
         const elePositionY = $('#research').offset().top;
 
-        this.focusMinY = elePositionY + 350;
+        this.focusMinY = elePositionY + 450;
         this.focusMaxY = elePositionY + 1400;
     }
 }
