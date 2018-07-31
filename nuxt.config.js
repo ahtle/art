@@ -13,7 +13,7 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     script: [
-      {src: 'https://code.jquery.com/jquery-3.3.1.min.js'}
+      {src: 'https://code.jquery.com/jquery-3.3.1.min.js'},
     ]
   },
   /*
@@ -41,10 +41,14 @@ module.exports = {
   },
 
   css: [
-    'assets/css/main.css'
+    'assets/css/main.css',
   ],
 
   modules: [
-    'bootstrap-vue/nuxt'
+    'bootstrap-vue/nuxt',
+  ],
+
+  plugins: [
+    {src: '~/plugins/fontAwesome'}
   ]
 }

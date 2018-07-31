@@ -17,7 +17,12 @@
     "node": "8.11.1"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.2",
+    "@fortawesome/free-solid-svg-icons": "^5.2.0",
+    "@fortawesome/vue-fontawesome": "^0.1.1",
     "bootstrap-vue": "^2.0.0-rc.11",
+    "i": "^0.3.6",
+    "npm": "^6.2.0",
     "nuxt": "^1.0.0"
   },
   "devDependencies": {

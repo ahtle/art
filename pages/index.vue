@@ -8,7 +8,7 @@
         </div>
       </transition>
 
-      <art-screen @navigate="scrollToSection"/>
+      <art-screen-2 @navigate="scrollToSection"/>
 
       <main :class="mainClass">
         <finance-section />
@@ -31,6 +31,7 @@
 
 import MastHead from '~/components/MastHead.vue';
 import ArtScreen from '~/components/home/ArtScreen.vue';
+import ArtScreen2 from '~/components/home/ArtScreen2.vue';
 import Navigation from '~/components/home/Navigation.vue';
 import FinanceSection from '~/components/home/FinanceSection.vue';
 import HumanResourceSection from '~/components/home/HumanResourceSection.vue';
@@ -41,12 +42,12 @@ import ResearchSection from '~/components/home/ResearchSection.vue';
 import ClinicalSection from '~/components/home/ClinicalSection.vue';
 import GlobalFooter from '~/components/GlobalFooter.vue';
 
-
 export default {
   components: {
     MastHead,
     Navigation,
     ArtScreen,
+    ArtScreen2,
     FinanceSection,
     HumanResourceSection,
     FacultyAffairsSection,
@@ -54,7 +55,7 @@ export default {
     CommunicationsSection,
     ResearchSection,
     ClinicalSection,
-    GlobalFooter
+    GlobalFooter,
   },
 
   data() {
