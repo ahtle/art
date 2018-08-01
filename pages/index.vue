@@ -1,28 +1,30 @@
 <template>
   <section>
-      <mast-head/>
+    <transition name="fade">
+      <mast-head v-if="showNavigation"/>
+    </transition>
 
-      <transition name="fade">
-        <div v-if="showNavigation">
-          <navigation @navigate="scrollToSection"/>
-        </div>
-      </transition>
+    <transition name="fade">
+      <div v-if="showNavigation">
+        <navigation @navigate="scrollToSection"/>
+      </div>
+    </transition>
 
-      <art-screen-2 @navigate="scrollToSection"/>
+    <art-screen-2 @navigate="scrollToSection"/>
 
-      <main :class="mainClass">
-        <finance-section />
-        <human-resource-section />
-        <faculty-affairs-section />
-        <operations-section />
-        <communications-section />
-        <research-section />
-        <clinical-section />
-      </main>
+    <main :class="mainClass">
+      <finance-section />
+      <human-resource-section />
+      <faculty-affairs-section />
+      <operations-section />
+      <communications-section />
+      <research-section />
+      <clinical-section />
+    </main>
 
-      <div id="main-spacer" v-if="mainSpacerClass"></div>
+    <div id="main-spacer" v-if="mainSpacerClass"></div>
 
-      <global-footer />
+    <global-footer />
 
   </section>
 </template>
