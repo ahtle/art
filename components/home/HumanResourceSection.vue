@@ -6,15 +6,8 @@
             <div class="offset-md-1 col-md-4">
     
                 <transition name="slide-fade">
-                    <div v-if="showCard" class="app-card">
-                        <div class="app-detail">
-                        <h2 class="app-title">domleanhr</h2>
-                        <p>Staff position posting process improvement. Automated position retrieval for position refill. 
-                            Workflow from hiring managers to HR managers to cut back and forth emails, to shorten time gap between 
-                            information gathering and position posting. To automate JIF generation.</p>
-                        </div>
-                        
-                        <img src="~assets/images/domleanhr.png"/>
+                    <div v-if="showCard">
+                        <app-card :icon="appIconOne" :title="appTitleOne" :subtitle="appSubtitleOne" :requirement="appRequirementOne" :detail="appDetailOne" />
                     </div>
                 </transition>
     
@@ -35,12 +28,22 @@
 </style>
 
 <script>
+import AppCard from './AppCard';
+
 export default {
+    components: {
+        AppCard
+    },
     data() {
         return {
             scrollY: false,
             focusMinY: false,
             showCard: false,
+            appIconOne: 'money-check-alt',
+            appTitleOne: 'DOM LEANHR',
+            appSubtitleOne: 'Staff position posting, managing, and automation tool',
+            appDetailOne: 'This tool provides a workflow for hiring managers, division managers, and HR managers to collaborate in collecting and preparing information needed for staff position posting that leads to automatic generation of JIFs. It operates as a central depository of all staff positions that enables near instantaneous reposting of position refill.',
+            appRequirementOne: ['Restricted to campus access with SUNet ID authentication', 'VPN required if accessing off campus'],
         }
     },
 

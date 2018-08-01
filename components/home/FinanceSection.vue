@@ -6,6 +6,7 @@
   
         <div class="flex-container">
             <app-card :icon="appIconOne" :title="appTitleOne" :subtitle="appSubtitleOne" :requirement="appRequirementOne" :detail="appDetailOne" />
+
             <app-card :icon="appIconTwo" :title="appTitleTwo" :subtitle="appSubtitleTwo" :requirement="appRequirementTwo" :detail="appDetailTwo" />
         </div>
     </section>

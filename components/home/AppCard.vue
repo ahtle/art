@@ -1,5 +1,5 @@
 <template>
-    <div class="app-card box-shadow" style="width: 25%; height: 350px;" v-on:mouseover="showData = true;" v-on:mouseleave="showData = false;">
+    <div class="app-card box-shadow" v-on:mouseover="showData = true;" v-on:mouseleave="showData = false;">
         <div class="fa-container" :class="{'full-width': showData}">
             <font-awesome-icon :icon="icon" v-if="!showData"/>
 
@@ -44,6 +44,8 @@ export default {
     border-radius: 10px;
     overflow: hidden;
     position: relative;
+    width: 500px;
+    height: 350px;
 }
 
 .app-detail {

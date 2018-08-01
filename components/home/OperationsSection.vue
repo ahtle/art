@@ -34,7 +34,7 @@
     </section>
 </template>
 
-<style>
+<style scope>
 #finance {
     padding-left: 60px; 
     padding-right: 60px;
@@ -47,7 +47,7 @@
 
 .app-card {
     background-color: #fff;
-    margin: 0 15px;
+    /* margin: 0 15px; */
 }
 
 .app-image-container {
