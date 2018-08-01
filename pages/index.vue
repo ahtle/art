@@ -1,11 +1,12 @@
 <template>
   <section>
-    <transition name="fade">
+    <!-- <transition name="fade">
       <mast-head v-if="showNavigation"/>
-    </transition>
+    </transition> -->
+    <mast-head v-show="showNavigation"/>
 
     <transition name="fade">
-      <div v-if="showNavigation">
+      <div v-show="showNavigation">
         <navigation @navigate="scrollToSection"/>
       </div>
     </transition>

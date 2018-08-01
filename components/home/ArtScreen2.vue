@@ -1,5 +1,5 @@
 <template>
-    <section id="art-screen">
+    <section id="art-screen-2">
             <div class="overlay">
                 <nav class="navbar">
                     <div class="logo-container">
@@ -41,7 +41,7 @@
 </template>
 
 <style scoped>
-   #art-screen {
+   #art-screen-2 {
         z-index: 1000;
         width: 100%;
         position: relative;
@@ -77,12 +77,16 @@
     .navbar ul li {
         text-align: center;
         margin: 0 20px;
-        color: #fff;
+        border-bottom: 0px solid orange;
+        transition: all 0.3s linear;
+    }
+
+    .navbar ul li:hover {
+        border-bottom: 4px solid orange;
     }
 
     .navbar ul li a {
         font-size: 1.2em;
-        color: #fff;
         font-weight: bold;
         cursor: pointer;
     }
@@ -98,6 +102,7 @@
     iframe {
         width: 100%;
         height: 100vh;
+
     }
 
     /* utility */
@@ -107,12 +112,17 @@
 
 </style>
 
+
 <script>
     export default {
         data () {
             return {
-
+                videoId: 'YlVTTenzM8w',
+                videoSettings: {autoplay: 1, showInfo: 0, rel: 0}
             }
+        },
+        components: {
+
         },
         methods: {
             emitNavigateTo(value) {
