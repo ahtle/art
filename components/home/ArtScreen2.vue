@@ -26,9 +26,6 @@
                         <li class="nav-item">
                             <a class="nav-link" v-on:click="emitNavigateTo('research')">Research</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" v-on:click="emitNavigateTo('clinical')">Clinical</a>
-                        </li>
                     </ul>
                 </nav>
 

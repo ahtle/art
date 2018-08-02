@@ -1,11 +1,11 @@
 <template>
-    <section id="communications" name="faculty" class="panel">
+    <section id="faculty" name="faculty" class="panel">
 
         <div class="imageContainer">
             <div class="bg-img" :class="blurClass"></div>
         </div>
 
-        <h1 class="section-header text-center" :class="focusedClass" style="color: #fff;">Communications</h1>
+        <h1 class="section-header text-center" :class="focusedClass" style="color: #fff;">Faculty</h1>
 
         <div class="flex-container">
             <transition v-for="(app, index) in appArr" name="slide-fade" :key="index">
@@ -16,7 +16,7 @@
 </template>
 
 <style scoped>
-#communications {
+#faculty {
     position: relative;
     padding: 0;
 }
@@ -26,7 +26,7 @@
 }
 
 .bg-img {
-    background-image: url('~assets/images/campus-big-01.jpg');
+    background-image: url('~assets/images/lake.jpg');
     background-position: center;
     background-size: cover;
     height: 600px;
@@ -34,6 +34,8 @@
 }
 
 .section-header {
+    top: 90px;
+    width: 100%;
     opacity: 0;
     transition: opacity 0.5s ease;
     position: absolute;
@@ -44,19 +46,14 @@
     opacity: 1;
 }
 
-.section-header {
-    top: 90px;
-    width: 100%;
-}
-
 .blur {
     filter: blur(8px);
     transform: scale(1.1);
 }
 
 @media only screen and (max-width: 1000px) {
-    #communications {
-        background-color: #eaeaea;
+    #faculty {
+        background-color: #eaeaea`;
         padding-top: 90px;
         padding-bottom: 45px;
     }
@@ -90,28 +87,28 @@ export default {
 
             appArr: [
                 {
-                    icon: 'calendar-alt',
-                    title: 'MEDICINE CALENDARS',
-                    subtitle: 'Publication of events and dissemination through syndication',
-                    detail: 'This tools provides a central depository of events in the department to allow user submission of events for general public consumption. It generates automated feed to any website configured to syndicate to display the events of their specific categories or keywords.',
-                    requirement: ['Open to public'],
-                    link: 'http://medicinecalendars.stanford.edu/',
+                    icon: 'user-circle',
+                    title: 'DOM FACULTY REVIEW',
+                    subtitle: 'Faculty counseling and evaluation management and reporting tool',
+                    detail: 'This tool provides a platform to source, generate, curate information to build faculty profiles by the division managers and faculty in preparation of evaluations by the chiefs. It tracks and manages the evaluation process, and generates full evaluation reports.',
+                    requirement: ['Restricted to campus access with SUNet ID authentication', 'VPN required if accessing off campus'],
+                    link: 'https://domfacultyreview.stanford.edu/',
                 },
                 {
-                    icon: 'newspaper',
-                    title: 'WEEKLY UPDATES',
-                    subtitle: 'Department primary communication channel',
-                    detail: 'This weekly newsletter is the primary outlet of department communications. This site provides a collection of the archives.',
-                    requirement: ['Restricted to SUNet ID access'],
-                    link: 'http://medicine.stanford.edu/news/newsLetterArchive.html',
+                    icon: 'briefcase',
+                    title: 'FACULTY APPLICATION',
+                    subtitle: 'Faculty position application tool',
+                    detail: 'This tool allows candidates from around the world to apply directly online for open faculty positions in the department. It tracks the applications, manages applicants, and generates reports.',
+                    requirement: ['Open to public'],
+                    link: 'http://facultyapplication.stanford.edu/dashboard/',
                 },
                 {
-                    icon: 'book-open',
-                    title: 'ANNUAL REPORTS',
-                    subtitle: 'Showcases of department activities and achievements',
-                    detail: 'These are the annual showcases of activities and achievements by faculty and staff across the department.',
-                    requirement: ['Open to public'],
-                    link: 'http://medicine.stanford.edu/annual-report-2018.html',
+                    icon: 'chalkboard-teacher',
+                    title: 'FACULTY INTERVIEW',
+                    subtitle: 'Faculty interview management tool',
+                    detail: 'This tools provides a platform to track and manage faculty candidate interviews. It allows the faculty affairs office to easily create surveys and distribute to interviewers to collect their evaluations of the candidates, it tallies the responses and generates report.',
+                    requirement: ['Restricted to campus access'],
+                    link: 'http://medicinetools.stanford.edu/faculty/',
                 }
             ],
         }
@@ -147,7 +144,7 @@ export default {
 
     mounted: function() {
         // element's scroll height
-        const elePositionY = $('#communications').offset().top;
+        const elePositionY = $('#faculty').offset().top;
 
         this.focusMinY = elePositionY + 300;
     }

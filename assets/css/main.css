@@ -1,6 +1,8 @@
 .panel {
+    position: relative;
     padding-top: 90px;
-    padding-bottom: 37.5px;
+    padding-bottom: 45px;
+    min-height: 600px;
 }
 
 .sand {
@@ -23,6 +25,21 @@ img {
 .section-header {
     text-transform: uppercase;
     font-size: 3em;
+}
+
+.flex-container {
+    position: absolute;
+    bottom: 45px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+@media only screen and (max-width: 1000px) {
+    .flex-container {
+        position: initial;
+        flex-wrap: wrap;
+    }
 }
 
 /* utility */

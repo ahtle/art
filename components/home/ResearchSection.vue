@@ -1,86 +1,59 @@
 <template>
-    <section id="research" name="research" class="panel" style="padding: 0;">
-
-        <div class="imageContainer">
-            <div class="bg-img" :class="blurClass"></div>
-        </div>
-
-        <h1 class="section-header text-center" :class="focusedClass" style="margin-bottom: 60px; color: #fff;">Research</h1>
-
-        <div class="row center">
-            <div class="app-card box-shadow" :class="focusedClass">
-                <div class="app-detail">
-                <h2 class="app-title">t32 grant</h2>
-                <p>Data collection and warehousing of insitutional databases to extract and parse T32 relevant information. 
-                    Automated feeding to web interface for curation and accuracy checking. Automated generation of Word tables that directy feed to final T32 grant submission.</p>
-                </div>
-                
-                <img src="~assets/images/t32grant.png"/>
-            </div>
+    <section id="research" name="research" class="panel sand">
+        <h1 class="section-header text-center" style="margin-bottom: 25px;">Research</h1>
+  
+        <div class="flex-container">
+            <transition v-for="(app, index) in appArr" name="slide-fade" :key="index">
+                <app-card v-show="showCard" :icon="app.icon" :title="app.title" :subtitle="app.subtitle" :requirement="app.requirement" :detail="app.detail" :link="app.link"/>
+            </transition>
         </div>
     </section>
 </template>
 
 <style scoped>
-#research {
-    position: relative;
-}
-
-.imageContainer {
-    overflow: hidden;
-}
-
-.bg-img {
-    background-image: url('~assets/images/campus-big-01.jpg');
-    background-position: center;
-    height: 750px;
-    transform: scale(1.1);
-}
-
-.center {
-    display: flex;
-    justify-content: center;
-}
-
-.app-card {
-    width: 35%;
-}
-
-.section-header, .app-card {
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    position: absolute;
-}
-
-.section-header {
-    top: 90px;
-    width: 100%;
-}
-
-.app-card {
-    bottom: 60px;
-}
-
-.opacity {
-    opacity: 1;
-}
-
-.blur {
-    filter: blur(8px);
-    transform: scale(1.1);
-}
 
 </style>
 
 <script>
+
+import AppCard from './AppCard';
+
 export default {
+    components: {
+        AppCard
+    },
     data() {
         return {
             scrollY: false,
             focusMinY: false,
-            focusMaxY: false,
-            focusedClass: '',
-            blurClass: ''
+            showCard: false,
+
+            appArr: [
+                {
+                    icon: 'table',
+                    title: 'T32GRANT',
+                    subtitle: 'Accurate data compilation and automated generation of T32 tables',
+                    detail: 'This tool provides a platform to extract data from multiple enterprise data sources, standardize them, curate and organize them, to automate generation of tables that are ready for T32 grant submission.',
+                    requirement: ['Restricted to campus access with SUNet ID authentication', 'VPN required if accessing off campus'],
+                    link: 'https://t32grant.stanford.edu/',
+                },
+                {
+                    icon: 'archive',
+                    title: 'CDH INVENTORY',
+                    subtitle: 'Collection and presentation of digital health projects on campus',
+                    detail: 'This tool allows users to directly submit their digital health projects online for review, and after approval by the authority, the projects are displayed to audience with granted access. The projects are organized by subject, organization unit, clinical area, etc. for easy and quick browsing, in addition to organic search function.',
+                    requirement: ['Restricted to campus access with SUNet ID authentication', 'VPN required if accessing off campus'],
+                    link: 'https://cdhdatabase.stanford.edu/',
+                },
+                {
+                    icon: 'check-double',
+                    title: 'DOM QUALITY',
+                    subtitle: 'Request system for SHC access',
+                    detail: 'This tool provides a simple portal as a proxy to SHC official request system. It allows staff in the department without a SHC ID to make requests to gain appropriate and approvable system accesses.',
+                    requirement: ['Restricted to campus access'],
+                    link: '#',
+                }
+            ],
         }
     },
 
@@ -92,12 +65,10 @@ export default {
 
     watch: {
         scrollY: function(value) {
-            if (value >= this.focusMinY && value <= this.focusMaxY) {
-                this.focusedClass = 'opacity';
-                this.blurClass = 'blur';
+            if (value >= this.focusMinY) {
+                this.showCard = true;
             } else {
-                this.focusedClass = ''
-                this.blurClass = '';
+
             }
         },
     },
@@ -111,14 +82,11 @@ export default {
     },
 
     mounted: function() {
-
         // element's scroll height
         const elePositionY = $('#research').offset().top;
 
-        this.focusMinY = elePositionY + 450;
-        this.focusMaxY = elePositionY + 1400;
+        this.focusMinY = elePositionY + 200;
     }
 }
-
 
 </script>

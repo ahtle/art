@@ -1,27 +1,16 @@
 <template>
     <section id="finance" name="finance" class="panel sand">
         <h1 class="section-header text-center" style="margin-bottom: 25px;">Finance</h1>
-        <h3 class="section-subheader text-center" style="margin-bottom: 50px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua.</h3>
   
         <div class="flex-container">
-            <app-card :icon="appIconOne" :title="appTitleOne" :subtitle="appSubtitleOne" :requirement="appRequirementOne" :detail="appDetailOne" />
-
-            <app-card :icon="appIconTwo" :title="appTitleTwo" :subtitle="appSubtitleTwo" :requirement="appRequirementTwo" :detail="appDetailTwo" />
+            <transition v-for="(app, index) in appArr" name="slide-fade" :key="index">
+                <app-card v-show="showCard" :icon="app.icon" :title="app.title" :subtitle="app.subtitle" :requirement="app.requirement" :detail="app.detail" :link="app.link"/>
+            </transition>
         </div>
     </section>
 </template>
 
 <style scoped>
-#finance {
-    padding-left: 30px; 
-    padding-right: 30px;
-}
-
-.flex-container {
-    display: flex;
-    justify-content: space-around;
-}
 
 </style>
 
@@ -35,21 +24,61 @@ export default {
     },
     data() {
         return {
-            appIconOne: 'money-check-alt',
-            appTitleOne: 'DOM COMPENSATION',
-            appSubtitleOne: 'Faculty bonus calculation and compensation reporting tool',
-            appDetailOne: 'This tool standardizes and automates clinical bonus calculation, generates total compensation reports for managers’ reviewing and editing, provides workflow to produce OTP forms for payroll system, and presents dashboards for faculty to view reports conveniently and securely.',
-            appRequirementOne: ['Restricted to campus access with SUNet ID authentication', 'VPN required if accessing off campus'],
+            scrollY: false,
+            focusMinY: false,
+            showCard: false,
 
-            appIconTwo: 'money-check-alt',
-            appTitleTwo: 'RAMP',
-            appSubtitleTwo: 'Resource Allocation Management and Planning tool',
-            appDetailTwo: 'This tool provides a platform for managing the department resources supporting research, education and clinical activities. It provides a workflow for   managers and faculty to submit funding requests to the department for review and approval. It tracks the life cycles and account balances of all approved funding commitments, and generates customizable visual presentations of trend lines and patterns.',
-            appRequirementTwo: ['Restricted to campus access with SUNet ID authentication', 'VPN required if accessing off campus'],
+            appArr: [
+                {
+                    icon: 'money-check-alt',
+                    title: 'DOM COMPENSATION',
+                    subtitle: 'Faculty bonus calculation and compensation reporting tool',
+                    detail: 'This tool standardizes and automates clinical bonus calculation, generates total compensation reports for managers’ reviewing and editing, provides workflow to produce OTP forms for payroll system, and presents dashboards for faculty to view reports conveniently and securely.',
+                    requirement: ['Restricted to campus access with SUNet ID authentication', 'VPN required if accessing off campus'],
+                    link: 'https://domcomp.stanford.edu/',
+                },
+                {
+                    icon: 'file-invoice',
+                    title: 'RAMP',
+                    subtitle: 'Resource Allocation Management and Planning tool',
+                    detail: 'This tool provides a platform for managing the department resources supporting research, education and clinical activities. It provides a workflow for   managers and faculty to submit funding requests to the department for review and approval. It tracks the life cycles and account balances of all approved funding commitments, and generates customizable visual presentations of trend lines and patterns.',
+                    requirement: ['Restricted to campus access with SUNet ID authentication', 'VPN required if accessing off campus'],
+                    link: 'https://domcommitments.stanford.edu/',
+                }
+            ],
+
         }
     },
-    methods: {
 
+    methods: {
+        handleScroll () {
+            this.scrollY = window.scrollY;
+        }
+    },
+
+    watch: {
+        scrollY: function(value) {
+            if (value >= this.focusMinY) {
+                this.showCard = true;
+            } else {
+
+            }
+        },
+    },
+
+    beforeMount () {
+        window.addEventListener('scroll', this.handleScroll);
+    },
+
+    beforeDestroy () {
+        window.removeEventListener('scroll', this.handleScroll);
+    },
+
+    mounted: function() {
+        // element's scroll height
+        const elePositionY = $('#finance').offset().top;
+
+        this.focusMinY = elePositionY + 600;
     }
 }
 

@@ -1,23 +1,28 @@
 <template>
-    <div class="app-card box-shadow" v-on:mouseover="showData = true;" v-on:mouseleave="showData = false;">
+    <div class="app-card" v-on:mouseover="showData = true;" v-on:mouseleave="showData = false;">
         <div class="fa-container" :class="{'full-width': showData}">
             <font-awesome-icon :icon="icon" v-if="!showData"/>
 
             <transition name="fade">
                 <div class="app-detail-hover" v-if="showData">
+                    <h2 style="color: orange; font-size: 1.3em;">{{ title }}</h2>
+
                     <p>{{ detail }}</p>
 
-                    <a class="btn btn-info go-to-app-link" href="#">Go to app</a>
+                    <a class="btn btn-info go-to-app-link" :href="link">Go to app</a>
                 </div>
             </transition>
         </div>
 
         <div class="app-detail" :class="{'no-width' : showData}">
-            <h2 class="app-title">{{ title }}</h2>
-            <h4 class="app-subtitle">{{ subtitle }}</h4>
+            <div style="height: 33%;">
+                <h2 class="app-title">{{ title }}</h2>
+                <h4 class="app-subtitle">{{ subtitle }}</h4>
+            </div>
 
             <hr>
 
+            <p style="color: #8c1515;">ACCESS</p>
             <ul>
                 <li v-for="(item, index) in requirement" :key="index">{{ item }}</li>
             </ul>
@@ -33,7 +38,7 @@ export default {
             showData: false
         }
     },
-    props: ['icon', 'title', 'subtitle', 'requirement', 'detail']
+    props: ['icon', 'title', 'subtitle', 'requirement', 'detail', 'link']
 }
 
 </script>
@@ -46,6 +51,13 @@ export default {
     position: relative;
     width: 500px;
     height: 350px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,.15), 2px 3px 3px rgba(0,0,0,.15);
+    /* transition: box-shadow 0.3s linear; */
+}
+
+.app-card:hover {
+    box-shadow: 0 0 15px rgba(0,0,0,.15), 6px 6px 6px rgba(0,0,0,.3);
 }
 
 .app-detail {
@@ -77,6 +89,10 @@ export default {
     bottom: 10px;
 }
 
+hr {
+    border-top: 2px solid rgba(0, 0, 0, .1);
+}
+
 /* font awesome */
 .fa-container {
     position: relative;
@@ -99,5 +115,18 @@ export default {
     width: 0;
     padding: 0;
     overflow: hidden;
+}
+
+@media only screen and (max-width: 1400px) {
+    .app-card {
+        width: 350px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .app-card {
+        width: 500px;
+        margin-bottom: 20px;
+    }  
 }
 </style>
