@@ -1,31 +1,38 @@
 <template>
-    <div class="app-card" v-on:mouseover="showData = true;" v-on:mouseleave="showData = false;">
-        <div class="fa-container" :class="{'full-width': showData}">
+    <div class="app-card">
+        <div class="fa-container" :class="{'full-width': widthClass}">
             <font-awesome-icon :icon="icon" v-if="!showData"/>
 
             <transition name="fade">
-                <div class="app-detail-hover" v-if="showData">
-                    <h2 style="color: orange; font-size: 1.3em;">{{ title }}</h2>
+                <div class="app-detail-hover" v-if="showDetail">
+                    <span class="arrow-left-container" v-on:click="showDetail = false;"><font-awesome-icon icon="arrow-left"/></span>
 
-                    <p>{{ detail }}</p>
+                    <h2 style="color: orange; font-size: 1.3em;">{{ title }}</h2>
+                    <p v-show="showDetail">{{ detail }}</p>
 
                     <a class="btn btn-info go-to-app-link" :href="link">Go to app</a>
                 </div>
             </transition>
         </div>
 
-        <div class="app-detail" :class="{'no-width' : showData}">
-            <div style="height: 33%;">
-                <h2 class="app-title">{{ title }}</h2>
-                <h4 class="app-subtitle">{{ subtitle }}</h4>
-            </div>
+        <div class="app-detail" :class="{'no-width' : widthClass}">
+            <transition name="fade">
+                <div v-show="!showData">
+                    <span class="arrow-right-container" v-on:click="showData = true;"><font-awesome-icon icon="arrow-right"/></span>
+                    
+                    <div style="height: 40%;">
+                        <h2 class="app-title">{{ title }}</h2>
+                        <h4 class="app-subtitle">{{ subtitle }}</h4>
+                    </div>
 
-            <hr>
+                    <hr>
 
-            <p style="color: #8c1515;">ACCESS</p>
-            <ul>
-                <li v-for="(item, index) in requirement" :key="index">{{ item }}</li>
-            </ul>
+                    <p style="color: #8c1515;">ACCESS</p>
+                    <ul>
+                        <li v-for="(item, index) in requirement" :key="index">{{ item }}</li>
+                    </ul>
+                </div>
+            </transition>
         </div>
     </div>
 </template>
@@ -33,12 +40,36 @@
 <script>
 
 export default {
+    props: ['icon', 'title', 'subtitle', 'requirement', 'detail', 'link'],
     data() {
         return {
-            showData: false
+            widthClass: false,
+            showData: false,
+            showDetail: false,
         }
     },
-    props: ['icon', 'title', 'subtitle', 'requirement', 'detail', 'link']
+    watch: {
+        showData: function(val) {
+            if (val === true) {
+                setTimeout(() => {
+                    this.widthClass = true;
+                }, 200);
+                setTimeout(() => {
+                    this.showDetail = true;
+                }, 400);
+            }
+        },
+        showDetail: function(val) {
+            if (val === false) {
+                setTimeout(() => {
+                    this.widthClass = false;
+                }, 200);
+                setTimeout(() => {
+                    this.showData = false;
+                }, 400);
+            }
+        }
+    }
 }
 
 </script>
@@ -61,7 +92,7 @@ export default {
 }
 
 .app-detail {
-    padding: 20px;
+    padding: 40px 20px 20px;
     width: 500px;
     transition: width 0.3s linear;
 }
@@ -87,6 +118,20 @@ export default {
     position: absolute;
     right: 10px;
     bottom: 10px;
+}
+
+.arrow-left-container {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.arrow-right-container {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
 }
 
 hr {
