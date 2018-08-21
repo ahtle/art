@@ -109,7 +109,7 @@ export default {
     },
 
     handleScroll() {
-      if (window.scrollY > 1100) {
+      if (window.scrollY > 1050) {
         this.mainClass = ''
         this.showNavigation = true;
         this.mainSpacerClass = false;
@@ -138,7 +138,7 @@ main.affix {
     width: 100%;
     margin-top: 0;
     overflow: hidden;
-    top: 35px;
+    top: 0px;
     z-index: 1;
 }
 
