@@ -5,12 +5,18 @@
             <div class="bg-img" :class="blurClass"></div>
         </div>
 
-        <h1 class="section-header text-center" :class="focusedClass" style="color: #fff;">Communications</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="section-header" :class="focusedClass" style="color: #fff;">Communications</h1>
 
-        <div class="flex-container">
-            <transition v-for="(app, index) in appArr" name="slide-fade" :key="index">
-                <app-card v-show="showCard" :icon="app.icon" :title="app.title" :subtitle="app.subtitle" :requirement="app.requirement" :detail="app.detail" :link="app.link"/>
-            </transition>
+                    <div class="img-section-flex-container">
+                        <transition v-for="(app, index) in appArr" name="slide-fade" :key="index">
+                            <app-card v-show="showCard" :icon="app.icon" :title="app.title" :subtitle="app.subtitle" :requirement="app.requirement" :detail="app.detail" :link="app.link"/>
+                        </transition>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 </template>
@@ -52,6 +58,18 @@
 .blur {
     filter: blur(8px);
     transform: scale(1.1);
+}
+
+.container {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.row {
+    height: 100%;
 }
 
 @media only screen and (max-width: 1000px) {

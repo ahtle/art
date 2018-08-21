@@ -1,242 +1,171 @@
 <template>
-    <section id="faculty" name="faculty" class="fa-container">
-        <h1 class="section-header">faculty affairs</h1>
+    <section id="faculty" name="faculty" class="panel">
 
-        <div class="fa-subsection" :class="subsectionOneClass" style="background-color: #f4f2f2">
-            <div class="subsection-inner">
-                <div class="subsection-title">
-                    <div>
-                        <h4><strong>01</strong> / 03</h4>
-                        <h2 style="color: #cacaca;">REVIEW</h2>
-                    </div>
-                </div>
-
-                <div class="app-box">
-                    <h4 class="app-title">domfacultyreview</h4>
-                    <p>Annual faculty evaluation and counseling process improvement. Tracking and monitoring of process status. 
-                        Automated triggers and reminders to allow managers stay on top to achieve improved completion rate. 
-                        Automated filling of faculty information to alleviate data entry burden on faculty.</p>
-                </div>
-
-                <div class="app-img-container box-shadow">
-                    <img src="~assets/images/domfacultyreview.png"/>
-                </div>
-
-                <div class="next-button box-shadow" v-on:click="selectSection = 2"></div>
-            </div>
+        <div class="imageContainer">
+            <div class="bg-img" :class="blurClass"></div>
         </div>
 
-        <div class="fa-subsection" :class="subsectionTwoClass" style="background-color: #414141;">
-            <div class="subsection-inner">
-                <div class="subsection-title">
-                    <div>
-                        <h4><strong>02</strong> / 03</h4>
-                        <h2 style="color: #777777;">apply</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="section-header" :class="focusedClass" style="color: #fff;">Faculty Affairs</h1>
+
+                    <div class="img-section-flex-container">
+                        <transition v-for="(app, index) in appArr" name="slide-fade" :key="index">
+                            <app-card v-show="showCard" :icon="app.icon" :title="app.title" :subtitle="app.subtitle" :requirement="app.requirement" :detail="app.detail" :link="app.link"/>
+                        </transition>
                     </div>
                 </div>
-
-                <div class="app-box" style="border-color: #fff;">
-                    <h4 class="app-title" style="color:#fff;">facultyapplication</h4>
-                    <p style="color: #fff;">Allow candidates from around the world to apply for faculty positions through a portal.</p>
-                </div>
-
-                <div class="app-img-container box-shadow">
-                    <img src="~assets/images/facultyapplication.png"/>
-                </div>
-
-                <div class="next-button box-shadow" v-on:click="selectSection = 3"></div>
             </div>
         </div>
-
-        <div class="fa-subsection" :class="subsectionThreeClass" style="background-color: #eb674a;">
-            <div class="subsection-inner">
-                <div class="subsection-title">
-                    <div>
-                        <h4><strong>03</strong> / 03</h4>
-                        <h2 style="color: #777777;">interview</h2>
-                    </div>
-                </div>
-
-                <div class="app-box" style="border-color: #fff;">
-                    <h4 class="app-title" style="color:#fff;">facultyinterview</h4>
-                    <p style="color: #fff;">Allow faculty affairs office to manage and monitor faculty candicate interview process. 
-                        Workflow to generate interview notifications to faculty, to send out surveys to collect interview feedback, to summerize candidacy ranking.</p>
-                </div>
-
-                <div class="app-img-container box-shadow">
-                    <img src="~assets/images/facultyinterview.png"/>
-                </div>
-
-                <div class="next-button box-shadow" v-on:click="selectSection = 1"></div>
-            </div>
-        </div>
-
+        
     </section>
 </template>
 
 <style scoped>
+#faculty {
+    position: relative;
+    padding: 0;
+}
+
+.imageContainer {
+    overflow: hidden;
+}
+
+.bg-img {
+    background-image: url('~assets/images/lake.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 600px;
+    transform: scale(1.1);
+}
 
 .section-header {
-    color: orange;
-    position: absolute;
     top: 90px;
-    left: 30px;
-    z-index: 2000;
-}
-
-.fa-container {
-    position: relative;
     width: 100%;
-    height: 70vh;
-    left: 0px;
-    transition: all 0.5s linear;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    position: absolute;
+    text-shadow: 2px 2px #000;
 }
 
-.fa-subsection {
+.opacity {
+    opacity: 1;
+}
+
+.blur {
+    filter: blur(8px);
+    transform: scale(1.1);
+}
+
+.container {
+    position: absolute;
     height: 100%;
-    width: 75%;
-    position: absolute;
-    padding: 20px;
-    transition: all 0.5s linear;
-}
-
-.subsection-inner {
-    height: 100%;
-}
-
-.subsection-title {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    color: #ebebeb;
-}
-
-.subsection-title h4 {
-    margin: 0;
-    transform: translateY(40px);
-    font-size: 18px;
-    color: #cecece;
-}
-
-.subsection-title h2 {
-    font-size: 200px;
-    text-transform: uppercase;
-}
-
-.app-box {
-    position: absolute;
-    top: 100px;
-    right: 10%;
-    width: 250px;
-    padding-left: 30px;
-    border-left: 2px solid #8c1515;
-}
-
-.app-img-container {
-    width: 40%;
-    bottom: 60px;
-    position: absolute;
-    right: 30%;
-    border-radius: 10px;
-    background: transparent;
-}
-
-.app-img-container img {
-    border-radius: 10px;
-}
-
-.next-button {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #fff;
-    position: absolute;
-    right: -20px;
-    top: 50%;
-    z-index: 2000;
-    background-image: url('~assets/images/slider-arrow.svg');
-    background-repeat: repeat-x;
-    background-position: left center;
-    transition: background-position 0.3s ease;
-}
-
-.next-button:hover {
-    background-position: 40px;
-}
-
-.left-transform-0 {
-    left: calc(-100% * 7.5/10);
-}
-
-.left-transform-1 {
+    top: 0;
     left: 0;
+    right: 0;
 }
 
-.left-transform-2 {
-    left: calc(100% * 7.5/10);
+.row {
+    height: 100%;
 }
 
-.left-transform-3 {
-    left: calc(100% * 15/10);
-}
+@media only screen and (max-width: 1000px) {
+    #faculty {
+        background-color: #eaeaea;
+        padding-top: 90px;
+        padding-bottom: 45px;
+    }
 
-.left-transform-4 {
-    left: calc(100% * 22.5/10);
-}
+    .imageContainer {
+        display: none;
+    }
 
+    .section-header {
+        position: initial;
+        margin-bottom: 60px;
+    }
+}
 
 </style>
 
 <script>
+import AppCard from './AppCard';
+
 export default {
-    data () {
+    components: {
+        AppCard
+    },
+    data() {
         return {
-            selectSection: 1,
-            subsectionOneClass: 'left-transform-1',
-            subsectionTwoClass: 'left-transform-2',
-            subsectionThreeClass: 'left-transform-3',
+            scrollY: false,
+            focusMinY: false,
+            focusedClass: '',
+            blurClass: '',
+            showCard: false,
+
+            appArr: [
+                {
+                    icon: 'user-circle',
+                    title: 'DOM FACULTY REVIEW',
+                    subtitle: 'Faculty counseling and evaluation management and reporting tool',
+                    detail: 'This tool provides a platform to source, generate, curate information to build faculty profiles by the division managers and faculty in preparation of evaluations by the chiefs. It tracks and manages the evaluation process, and generates full evaluation reports.',
+                    requirement: ['Restricted to campus access with SUNet ID authentication', 'VPN required if accessing off campus'],
+                    link: 'https://domfacultyreview.stanford.edu/',
+                },
+                {
+                    icon: 'briefcase',
+                    title: 'FACULTY APPLICATION',
+                    subtitle: 'Faculty position application tool',
+                    detail: 'This tool allows candidates from around the world to apply directly online for open faculty positions in the department. It tracks the applications, manages applicants, and generates reports.',
+                    requirement: ['Open to public'],
+                    link: 'http://facultyapplication.stanford.edu/dashboard/',
+                },
+                {
+                    icon: 'chalkboard-teacher',
+                    title: 'FACULTY INTERVIEW',
+                    subtitle: 'Faculty interview management tool',
+                    detail: 'This tools provides a platform to track and manage faculty candidate interviews. It allows the faculty affairs office to easily create surveys and distribute to interviewers to collect their evaluations of the candidates, it tallies the responses and generates report.',
+                    requirement: ['Restricted to campus access'],
+                    link: 'http://medicinetools.stanford.edu/faculty/',
+                }
+            ],
         }
     },
-    watch: {
-        selectSection: function(value) {
-            if (value === 1) {
-                this.subsectionOneClass = 'left-transform-1';
-                this.subsectionTwoClass = 'left-transform-2';
-                this.subsectionThreeClass = 'left-transform-0';
 
-                setTimeout(() => {
-                    this.subsectionThreeClass = 'left-transform-3 no-display';
-                }, 600);
-
-                setTimeout(() => {
-                    this.subsectionThreeClass = 'left-transform-3';
-                }, 700);
-            } else if (value === 2) {
-                this.subsectionOneClass = 'left-transform-0';
-                this.subsectionTwoClass = 'left-transform-1';
-                this.subsectionThreeClass = 'left-transform-2';
-
-                setTimeout(() => {
-                    this.subsectionOneClass = 'left-transform-3 no-display';
-                }, 600);
-                
-                setTimeout(() => {
-                    this.subsectionOneClass = 'left-transform-3';
-                }, 700);
-            } else {
-                this.subsectionOneClass = 'left-transform-2';
-                this.subsectionTwoClass = 'left-transform-0';
-                this.subsectionThreeClass = 'left-transform-1';
-
-                setTimeout(() => {
-                    this.subsectionTwoClass = 'left-transform-3 no-display';
-                }, 600);
-                
-                setTimeout(() => {
-                    this.subsectionTwoClass = 'left-transform-3';
-                }, 700);
-            }
+    methods: {
+        handleScroll () {
+            this.scrollY = window.scrollY;
         }
+    },
+
+    watch: {
+        scrollY: function(value) {
+            if (value >= this.focusMinY) {
+                this.showCard = true;
+                this.focusedClass = 'opacity';
+                this.blurClass = 'blur';
+            } else {
+                // this.showCard = false;
+                // this.focusedClass = ''
+                // this.blurClass = '';
+            }
+        },
+    },
+
+    beforeMount () {
+        window.addEventListener('scroll', this.handleScroll);
+    },
+
+    beforeDestroy () {
+        window.removeEventListener('scroll', this.handleScroll);
+    },
+
+    mounted: function() {
+        // element's scroll height
+        const elePositionY = $('#faculty').offset().top;
+
+        this.focusMinY = elePositionY + 300;
     }
 }
 </script>

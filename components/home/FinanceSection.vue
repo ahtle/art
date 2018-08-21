@@ -1,17 +1,25 @@
 <template>
     <section id="finance" name="finance" class="panel sand">
-        <h1 class="section-header text-center" style="margin-bottom: 25px;">Finance</h1>
-  
-        <div class="flex-container">
-            <transition v-for="(app, index) in appArr" name="slide-fade" :key="index">
-                <app-card v-show="showCard" :icon="app.icon" :title="app.title" :subtitle="app.subtitle" :requirement="app.requirement" :detail="app.detail" :link="app.link"/>
-            </transition>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="section-header" style="margin-bottom: 25px;">Finance</h1>
+            
+                    <div class="flex-container">
+                        <transition v-for="(app, index) in appArr" name="slide-fade" :key="index">
+                            <app-card v-show="showCard" :icon="app.icon" :title="app.title" :subtitle="app.subtitle" :requirement="app.requirement" :detail="app.detail" :link="app.link"/>
+                        </transition>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 </template>
 
 <style scoped>
-
+#finance {
+    margin-top: 50px;
+}
 </style>
 
 <script>

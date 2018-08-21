@@ -1,11 +1,17 @@
 <template>
     <section id="research" name="research" class="panel sand">
-        <h1 class="section-header text-center" style="margin-bottom: 25px;">Research</h1>
-  
-        <div class="flex-container">
-            <transition v-for="(app, index) in appArr" name="slide-fade" :key="index">
-                <app-card v-show="showCard" :icon="app.icon" :title="app.title" :subtitle="app.subtitle" :requirement="app.requirement" :detail="app.detail" :link="app.link"/>
-            </transition>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="section-header" style="margin-bottom: 25px;">Research</h1>
+            
+                    <div class="flex-container">
+                        <transition v-for="(app, index) in appArr" name="slide-fade" :key="index">
+                            <app-card v-show="showCard" :icon="app.icon" :title="app.title" :subtitle="app.subtitle" :requirement="app.requirement" :detail="app.detail" :link="app.link"/>
+                        </transition>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 </template>
@@ -48,10 +54,10 @@ export default {
                 {
                     icon: 'check-double',
                     title: 'DOM QUALITY',
-                    subtitle: 'Request system for SHC access',
-                    detail: 'This tool provides a simple portal as a proxy to SHC official request system. It allows staff in the department without a SHC ID to make requests to gain appropriate and approvable system accesses.',
+                    subtitle: 'Tracking of and enrolling into quality care projects for medical board credits',
+                    detail: 'This tool collects and lists quality care projects in the department to allow clinicians and scientists to enroll into the projects to work with mentors for quality care training. Upon completion of the project, the system automatically generates reports that are ready for submission to claim MOC credit.',
                     requirement: ['Restricted to campus access'],
-                    link: '#',
+                    link: 'https://domquality.stanford.edu/',
                 }
             ],
         }

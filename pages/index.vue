@@ -16,12 +16,10 @@
     <main :class="mainClass">
       <finance-section />
       <human-resource-section />
-      <!-- <faculty-affairs-section /> -->
-      <faculty-affairs-section-2 />
+      <faculty-affairs-section />
       <operations-section />
       <communications-section />
       <research-section />
-      <!-- <clinical-section /> -->
     </main>
 
     <div id="main-spacer" v-if="mainSpacerClass"></div>
@@ -39,12 +37,10 @@ import ArtScreen2 from '~/components/home/ArtScreen2.vue';
 import Navigation from '~/components/home/Navigation.vue';
 import FinanceSection from '~/components/home/FinanceSection.vue';
 import HumanResourceSection from '~/components/home/HumanResourceSection.vue';
-// import FacultyAffairsSection from '~/components/home/FacultyAffairsSection.vue';
-import FacultyAffairsSection2 from '~/components/home/FacultyAffairsSection2.vue';
+import FacultyAffairsSection from '~/components/home/FacultyAffairsSection.vue';
 import OperationsSection from '~/components/home/OperationsSection.vue';
 import CommunicationsSection from '~/components/home/CommunicationsSection.vue';
 import ResearchSection from '~/components/home/ResearchSection.vue';
-// import ClinicalSection from '~/components/home/ClinicalSection.vue';
 import GlobalFooter from '~/components/GlobalFooter.vue';
 
 export default {
@@ -55,12 +51,10 @@ export default {
     ArtScreen2,
     FinanceSection,
     HumanResourceSection,
-    // FacultyAffairsSection,
-    FacultyAffairsSection2,
+    FacultyAffairsSection,
     OperationsSection,
     CommunicationsSection,
     ResearchSection,
-    // ClinicalSection,
     GlobalFooter,
   },
 
@@ -144,7 +138,7 @@ main.affix {
     width: 100%;
     margin-top: 0;
     overflow: hidden;
-    top: 0;
+    top: 35px;
     z-index: 1;
 }
 

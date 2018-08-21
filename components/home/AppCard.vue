@@ -77,14 +77,19 @@ export default {
 <style>
 .app-card {
     display: flex;
+    margin-right: 3%;
     border-radius: 10px;
     overflow: hidden;
     position: relative;
-    width: 500px;
+    width: 31.3%;
     height: 350px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0,0,0,.15), 2px 3px 3px rgba(0,0,0,.15);
     /* transition: box-shadow 0.3s linear; */
+}
+
+.app-card:last-child {
+    margin-right: 0;
 }
 
 .app-card:hover {
@@ -120,18 +125,12 @@ export default {
     bottom: 10px;
 }
 
-.arrow-left-container {
+.arrow-left-container, .arrow-right-container {
     position: absolute;
     right: 10px;
     top: 10px;
     cursor: pointer;
-}
-
-.arrow-right-container {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    cursor: pointer;
+    font-size: 1.3em
 }
 
 hr {

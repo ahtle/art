@@ -37,18 +37,28 @@ module.exports = {
         })
       }
     },
-
+    
   },
-
+  
   css: [
     'assets/css/main.css',
   ],
-
+  
   modules: [
     'bootstrap-vue/nuxt',
   ],
-
+  
   plugins: [
-    {src: '~/plugins/fontAwesome'}
+    {src: '~/plugins/fontAwesome'},
+  ],
+
+  loaders: [
+    {
+      test: /\.(mov)$/,
+      loader: 'file-loader',
+      query: {
+        limit: 100
+      }
+    }
   ]
 }

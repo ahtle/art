@@ -1,11 +1,14 @@
 <template>
     <section id="art-screen-2">
-            <div class="overlay">
+        <div class="brandbar">
+            <div class="screenContainer">
+                <h3>Stanford University</h3>
+            </div>
+        </div>
+
+        <div class="overlay">
+            <div class="screenContainer">
                 <nav class="navbar">
-                    <div class="logo-container">
-                        <h1 class="orange">Art & Research Tools</h1>
-                        <h3>In the Department of Medicine</h3>
-                    </div>
 
                     <ul class="nav navbar-nav">
                         <li class="nav-item">
@@ -29,15 +32,23 @@
                     </ul>
                 </nav>
 
-                <h1 class="tagline">Cook to order</h1>
+                <div class="logo-container">
+                    <h1 class="orange">Administrative & Research Tools</h1>
+                    <h3>In the Department of Medicine</h3>
+                </div>
+                
+                <h1 class="tagline">Application tools, craft to order</h1>
             </div>
+        </div>
 
-            <iframe src="https://www.youtube.com/embed/YlVTTenzM8w?rel=0&amp;rel=0&showinfo=0&mute=1&autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <!-- <iframe src="https://www.youtube.com/embed/YlVTTenzM8w?rel=0&amp;rel=0&showinfo=0&mute=1&autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+        <video :src="require('~/assets/videos/coffee.mp4')" autoplay muted loop></video>
 
     </section>
 </template>
 
 <style scoped>
+
    #art-screen-2 {
         z-index: 1000;
         width: 100%;
@@ -46,24 +57,51 @@
         color: #fff;
     }
 
+    .brandbar {
+        background-color: #81040e;
+        height: 35px;
+        padding: 3px;
+        color: #fff;
+    }
+
+    .screenContainer {
+        position: relative;
+        width: 1380px;
+        height: 100%;
+        margin: 0 auto;
+    }
+
+    .brandbar h3 {
+        font-family: Stanford, Source Serif Pro, Georgia, Times, Times New Roman, serif;
+        font-size: 1.3em;
+    }
+
     .overlay {
         position: absolute;
         width: 100%;
         height: 100%;
+        z-index: 2000;
         /* background-color: rgba(0,0,0,0.1); */
     }
 
     .logo-container {
+        position: absolute;
+        top: 35%;
         margin-top: 20px;
         text-shadow: 2px 2px #000;
     }
 
     .logo-container h1 {
+        font-size: 4em;
+    }
+
+    .logo-container h3 {
         font-size: 2em;
     }
 
     .navbar {
-        justify-content: space-around;
+        margin-top: 20px;
+        justify-content: flex-end;
         padding: 5px;
     }
 
@@ -83,20 +121,19 @@
     }
 
     .navbar ul li a {
-        font-size: 1.2em;
-        font-weight: bold;
+        font-size: 1.5em;
         cursor: pointer;
     }
 
     .tagline {
         position: absolute;
-        top: 45%;
-        right: 10%;
-        font-size: 5em;
+        bottom: 15%;
+        right: 0%;
+        font-size: 3.5em;
         text-shadow: 2px 2px #000;
     }
 
-    iframe {
+    video {
         width: 100%;
         height: 100vh;
 
@@ -114,12 +151,10 @@
     export default {
         data () {
             return {
-                videoId: 'YlVTTenzM8w',
-                videoSettings: {autoplay: 1, showInfo: 0, rel: 0}
             }
         },
         components: {
-
+            
         },
         methods: {
             emitNavigateTo(value) {
