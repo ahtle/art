@@ -136,7 +136,7 @@ export default {
 main.affix {
     position: fixed;
     width: 100%;
-    margin-top: 80px;
+    margin-top: 60px;
     overflow: hidden;
     top: 0px;
     z-index: 1;
