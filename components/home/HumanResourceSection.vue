@@ -35,7 +35,7 @@ export default {
 
             appArr: [
                 {
-                    icon: 'male',
+                    icon: 'users',
                     title: 'DOM LEANHR',
                     subtitle: 'Staff position posting, managing, and automation tool',
                     detail: 'This tool provides a workflow for hiring managers, division managers, and HR managers to collaborate in collecting and preparing information needed for staff position posting that leads to automatic generation of JIFs. It operates as a central depository of all staff positions that enables near instantaneous reposting of position refill.',

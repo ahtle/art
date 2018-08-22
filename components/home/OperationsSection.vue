@@ -50,7 +50,7 @@ export default {
                     subtitle: 'Request system for SHC access',
                     detail: 'This tool provides a simple portal as a proxy to SHC official request system. It allows staff in the department without a SHC ID to make requests to gain appropriate and approvable system accesses.',
                     requirement: ['Restricted to campus access'],
-                    link: '#',
+                    link: 'https://stanfordmedicine.qualtrics.com/jfe/form/SV_79yWPcynqsbdQTH',
                 },
             ]
         }
