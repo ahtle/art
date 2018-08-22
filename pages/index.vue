@@ -109,7 +109,7 @@ export default {
     },
 
     handleScroll() {
-      if (window.scrollY > 990) {
+      if (window.scrollY > 970) {
         this.mainClass = ''
         this.showNavigation = true;
         this.mainSpacerClass = false;
