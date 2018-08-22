@@ -51,7 +51,7 @@ export default {
                     subtitle: 'Resource Allocation Management and Planning tool',
                     detail: 'This tool provides a platform for managing the department resources supporting research, education and clinical activities. It provides a workflow for   managers and faculty to submit funding requests to the department for review and approval. It tracks the life cycles and account balances of all approved funding commitments, and generates customizable visual presentations of trend lines and patterns.',
                     requirement: ['Restricted to campus access with SUNet ID authentication', 'VPN required if accessing off campus'],
-                    link: 'https://domcommitments.stanford.edu/',
+                    link: 'https://ramp.stanford.edu/',
                 }
             ],
 

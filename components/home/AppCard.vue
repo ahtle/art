@@ -3,11 +3,12 @@
         <div class="fa-container" :class="{'full-width': widthClass}">
             <font-awesome-icon :icon="icon" v-if="!showData"/>
 
+            <!-- card back -->
             <transition name="fade">
                 <div class="app-detail-hover" v-if="showDetail">
                     <span class="arrow-left-container" v-on:click="showDetail = false;"><font-awesome-icon icon="arrow-left"/></span>
 
-                    <h2 style="color: orange; font-size: 1.3em;">{{ title }}</h2>
+                    <h2>{{ title }}</h2>
                     <p v-show="showDetail">{{ detail }}</p>
 
                     <a class="btn btn-info go-to-app-link" :href="link">Go to app</a>
@@ -15,6 +16,7 @@
             </transition>
         </div>
 
+        <!-- card front -->
         <div class="app-detail" :class="{'no-width' : widthClass}">
             <transition name="fade">
                 <div v-show="!showData">
@@ -117,6 +119,15 @@ export default {
 .app-detail-hover {
     font-size: 18px;
     padding: 5px;
+}
+
+.app-detail-hover h2 {
+    color: orange;
+    font-size: 1.3em;
+}
+
+.app-detail-hover p {
+    font-size: 0.95em;
 }
 
 .go-to-app-link {
