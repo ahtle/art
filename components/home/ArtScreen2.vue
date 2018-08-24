@@ -37,7 +37,7 @@
                     <h3>In the Department of Medicine</h3>
                 </div>
                 
-                <h1 class="tagline">Application tools, craft to order</h1>
+                <h1 class="tagline">Application tools, crafted to order</h1>
             </div>
         </div>
 
